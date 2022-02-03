@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#E4E4E4</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="textColorBold">#000</color>
+    <color name="textColor">#2B2B2B</color>
+    <color name="textColorGray">#606060</color>
+    <color name="cool_blue">#D81565C0</color>
+    <color name="cool_purple">#6F46E3</color>
+    <color name="cool_gray">#232323</color>
+    <color name="cool_green">#0AA06E</color>
+    <color name="cool_red">#C62828</color>
+
+
+    <color name="defaultBackgroundColor">#E4E4E4</color>
+
+
+    <color name="blue_dark">#01579b</color>
+    <color name="blue_light">#9fa8da</color>
+
+    <color name="red_dark">#880e4f</color>
+    <color name="red_light">#f48fb1</color>
+
+    <color name="orange_dark">#bf360c</color>
+    <color name="orange_light">#ffab91</color>
+
+    <color name="purple_dark">#4a148c</color>
+    <color name="purple_light">#ce93d8</color>
+
+    <color name="green_dark">#1b5e20</color>
+    <color name="green_light">#a5d6a7</color>
+
+    <color name="yellow_dark">#ffd600</color>
+    <color name="yellow_light">#fff59d</color>
+
+    <color name="default_dark">#006064</color>
+    <color name="default_light">#80cbc4</color>
+
+    <color name="transparent">#00BABABA</color>
+
+    <color name="loadingBackground">#75FFFFFF</color>
+
+</resources>

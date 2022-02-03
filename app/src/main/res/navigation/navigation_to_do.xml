@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_to_do"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.todo.view.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_listItemFragment"
+            app:destination="@id/listItemFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_typedReminderFragment"
+            app:destination="@id/typedReminderFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_addListFragment"
+            app:destination="@id/addListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_addReminderFragment"
+            app:destination="@id/addReminderFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listItemFragment"
+        android:name="com.example.todo.view.fragment.ListItemFragment"
+        android:label="ListItemFragment"
+        tools:layout="@layout/fragment_list_item">
+        <action
+            android:id="@+id/action_listItemFragment_to_addReminderFragment"
+            app:destination="@id/addReminderFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/typedReminderFragment"
+        android:name="com.example.todo.view.fragment.TypedReminderFragment"
+        android:label="TypedReminderFragment"
+        tools:layout="@layout/fragment_typed_reminders">
+        <action
+            android:id="@+id/action_typedReminderFragment_to_addReminderFragment"
+            app:destination="@id/addReminderFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/addListFragment"
+        android:name="com.example.todo.view.fragment.AddListFragment"
+        android:label="AddListFragment"
+        tools:layout="@layout/fragment_add_list" />
+    <fragment
+        android:id="@+id/addReminderFragment"
+        android:name="com.example.todo.view.fragment.AddReminderFragment"
+        android:label="AddReminderFragment"
+        tools:layout="@layout/fragment_add_reminder">
+        <action
+            android:id="@+id/action_addReminderFragment_to_addListFragment"
+            app:destination="@id/addListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.todo.view.fragment.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+
+</navigation>

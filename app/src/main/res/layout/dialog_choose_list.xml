@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCancel"
+                style="@style/txtActionBold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/default_gap"
+                android:padding="@dimen/small_gap"
+                android:text="Close"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/default_gap"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewHeader" />
+
+        <LinearLayout
+            android:id="@+id/viewAdd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewHeader">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAddReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add List" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgAddReminder"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:tint="@color/textColorGray"
+                app:srcCompat="@drawable/ic_baseline_add_24" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

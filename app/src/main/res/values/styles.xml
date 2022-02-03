@@ -1,0 +1,80 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/defaultBackgroundColor</item>
+        <item name="cardViewStyle">@style/myCardViewStyle</item>
+        <item name="android:textViewStyle">@style/myTextViewStyle</item>
+        <item name="editTextStyle">@style/editTextStyle</item>
+    </style>
+
+    <style name="myCardViewStyle" parent="CardView">
+        <item name="android:padding">@dimen/small_gap</item>
+        <item name="cardCornerRadius">@dimen/card_border_radius</item>
+    </style>
+
+
+    <style name="cardViewHeaderStyle" parent="CardView">
+        <item name="android:background">@drawable/bg_header_list_background</item>
+    </style>
+
+    <style name="myTextViewStyle">
+        <item name="android:padding">@dimen/very_small_gap</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="boldTextViewStyle" parent="myTextViewStyle">
+        <item name="android:textColor">@color/textColorBold</item>
+        <item name="android:textSize">@dimen/bold_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="txtActionBold" parent="myTextViewStyle">
+        <item name="android:textColor">@color/cool_blue</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="txtAction" parent="myTextViewStyle">
+        <item name="android:textColor">@color/cool_blue</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="editTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_default_edit_text</item>
+        <item name="android:padding">@dimen/small_gap</item>
+    </style>
+
+    <style name="hintEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/textColorBold</item>
+        <item name="android:textColorHint">@color/textColorGray</item>
+        <item name="android:padding">@dimen/small_gap</item>
+        <item name="android:backgroundTint">@color/cardview_light_background</item>
+    </style>
+
+    <style name="dialogFragmentTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="dialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="testPicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/cool_blue</item>
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/cool_blue</item>
+    </style>
+
+</resources>

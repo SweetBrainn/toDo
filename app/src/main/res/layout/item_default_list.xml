@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.todo.model.database.entity.Item" />
+
+        <import type="com.example.todo.model.Utility.Utility" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDay"
+            style="@style/boldTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_gap"
+            android:text="@{Utility.INSTANCE.getDayTitle(item.createdDate)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCreatedDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/small_gap"
+            android:text="@{Utility.INSTANCE.getMonthName(item.createdDate) + ` ` + Utility.INSTANCE.getDay(item.createdDate) }"
+            app:layout_constraintBottom_toBottomOf="@id/txtDay"
+            app:layout_constraintLeft_toRightOf="@id/txtDay"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtDay" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_gap"
+            android:checked="@{item.done}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDay" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/boldTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/very_small_gap"
+            android:text="@{item.title}"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton"
+            app:layout_constraintLeft_toRightOf="@id/radioButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/radioButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtNotes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/very_small_gap"
+            android:layout_marginVertical="@dimen/small_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:text="@{item.notes}"
+            app:layout_constraintLeft_toRightOf="@id/radioButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/very_small_gap"
+            android:layout_marginVertical="@dimen/small_gap"
+            android:layout_marginTop="@dimen/very_small_gap"
+            android:text="@{item.date != null ? Utility.INSTANCE.dateToString(item.date) : `` }"
+            android:visibility="@{item.date != null ? View.VISIBLE : View.GONE}"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/radioButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtNotes" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintLeft_toRightOf="@id/txtDate"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtNotes">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStatusDone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/very_small_gap"
+                android:layout_marginVertical="@dimen/small_gap"
+                android:layout_marginTop="@dimen/very_small_gap"
+                android:text="Done"
+                android:visibility="@{!item.done? View.GONE : View.VISIBLE}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStatusToDo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/very_small_gap"
+                android:layout_marginVertical="@dimen/small_gap"
+                android:layout_marginTop="@dimen/very_small_gap"
+                android:text="Todo"
+                android:visibility="@{item.done? View.GONE : View.VISIBLE}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:background="@color/textColorGray"
+            android:layout_marginTop="@dimen/default_gap"
+            app:layout_constraintLeft_toLeftOf="@id/txtTitle"
+            app:layout_constraintRight_toRightOf="@id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@id/viewStatus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.todo.viewModel.ListItemViewModel" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizonatl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/small_gap"
+            android:background="@drawable/bg_header_list_background"
+            app:layout_constraintBottom_toTopOf="@id/horizonatl1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/boldTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/large_gap"
+                android:layout_marginTop="@dimen/large_gap"
+                android:text="@{viewModel.dataTitle}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtReminders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/large_gap"
+                android:layout_marginBottom="@dimen/default_gap"
+                android:text="Reminders"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtReminderCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap"
+                android:layout_marginBottom="@dimen/default_gap"
+                android:text="@{viewModel.remindersCount.toString()}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:visibility="@{viewModel.listVisibility ? View.VISIBLE : View.GONE}"
+            android:id="@+id/lstItems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginBottom="@dimen/small_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizonatl1"
+            app:layout_constraintVertical_bias="0" />
+
+        <LinearLayout
+            android:id="@+id/viewAdd"
+            android:visibility="@{viewModel.listVisibility ? View.GONE : View.VISIBLE}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizonatl1"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAddReminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Reminder"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgAddReminder"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:tint="@color/textColorGray"
+                app:srcCompat="@drawable/ic_baseline_add_24"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
